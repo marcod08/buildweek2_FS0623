@@ -1,0 +1,66 @@
+.arrow-link {
+    display: inline-block;
+    background-color: black;
+    border-radius: 100%;
+    height: 48%;
+    padding: 5px;
+    margin: 5px;
+}
+  
+.arrow-link svg {
+    margin-top: -13px;
+    color: white;
+}
+
+/*album*/
+#main-b {
+    border-radius: 10px;
+  
+    display: flex;
+  
+    background: #FFF32F;
+    background: -moz-linear-gradient(top, #FFF32F 0%, #FF7100 50%, #C525B9 100%);
+    background: -webkit-linear-gradient(top, #FFF32F 0%, #FF7100 50%, #C525B9 100%);
+    background: linear-gradient(to bottom, #FFF32F 0%, #FF7100 50%, #C525B9 100%);
+
+    border-radius: 3px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: reverse;
+  }
+/*Pulsanti-icons*/
+  #cuore:hover,
+  #cuore:focus {
+    filter: brightness(0) saturate(100%) invert(83%) sepia(32%) saturate(4763%) hue-rotate(82deg) brightness(93%) contrast(84%);
+ }
+  #dow:hover,
+  #dow:focus {
+    filter: brightness(0) saturate(100%) invert(83%) sepia(32%) saturate(4763%) hue-rotate(82deg) brightness(93%) contrast(84%);
+  }
+  #arrow:hover,
+  #arrow:focus {
+    filter: brightness(0) saturate(100%) invert(83%) sepia(32%) saturate(4763%) hue-rotate(82deg) brightness(93%) contrast(84%);
+  }
+
+.table-head
+{
+  border-bottom: 1px #a8a8a8 solid;
+}
+
+.album-info-section{
+  background: linear-gradient(180deg, rgba(0,0,0,0.5125699938178396) 0%, rgba(32,32,32,0.9607492655265231) 48%, rgba(32,32,32,1) 100%) !important;
+}
+
+#album-cover-img
+{
+  width: 90%;
+}
+
+#to-search{
+  color: #a8a8a8;
+}
+#to-search:hover{
+  color: white;
+  cursor: pointer;
+}

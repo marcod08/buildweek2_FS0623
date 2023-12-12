@@ -1,0 +1,41 @@
+.card-img-overlay {
+    padding: 0rem 1rem 1rem 1rem;
+}
+
+ div.initial-div {
+    padding: 0;
+}
+
+.artist-name
+{
+    font-size: 5em;
+}
+
+.verified-text
+{
+    display: inline !important;
+}
+
+.bot-5
+{
+    bottom: 5%!important;
+}
+
+.artist-img
+{
+    object-fit: cover !important; 
+    height: 100% !important;
+}
+
+.top-artist
+{
+    height: 20em !important
+}
+
+#to-search{
+    color: #a8a8a8;
+  }
+  #to-search:hover{
+    color: white;
+    cursor: pointer;
+  }
