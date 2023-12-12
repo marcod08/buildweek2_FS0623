@@ -1,0 +1,46 @@
+document.addEventListener('DOMContentLoaded', function () {
+    // Your Deezer API endpoint
+    const apiEndpoint = 'https://deezerdevs-deezer.p.rapidapi.com/playlist/102508';
+
+    // Your RapidAPI key
+    const apiKey = '6e85a2755bmsh8d7d68ee0f84f37p153c1djsn4c09afbb6f6d';
+
+    // Fetch data from Deezer API
+    fetch(apiEndpoint, {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com',
+            'X-RapidAPI-Key': apiKey,
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Handle the data and populate the HTML container
+        const container = document.getElementById('row-to-append-children');
+
+        nascondiSpinner ();
+
+        data.tracks.data.forEach(album => {
+            const albumCard = document.createElement('div');
+            albumCard.classList.add('col-6', 'col-md-3', 'mb-4', 'h-100', 'my-3', 'p-1');
+
+            albumCard.innerHTML = `
+                <div class="card">
+                    <img src="${album.album.cover_medium}" class="card-img-top" alt="${album.album.title}">
+                    <div class="card-body">
+                        <h5 class="card-title">${album.album.title}</h5>
+                        <p class="card-text">${album.artist.name}</p>
+                    </div>
+                </div>
+            `;
+
+            container.appendChild(albumCard);
+        });
+    })
+    .catch(error => console.error('Error fetching data:', error));
+});
+
+function nascondiSpinner () {
+    const spinnerContainer = document.getElementById('spinner-container');
+    spinnerContainer.classList.add('d-none')
+}
