@@ -4,20 +4,850 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="./assets/imgs/logo.svg" />
+    <title>Spotify</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/circular-font.css">
+    <link rel="stylesheet" href="assets/css/textAnimation.css">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"
         defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"
         defer></script>
-        <script src="assets/js/index.js" defer></script>
+    <script src="assets/js/index.js" defer></script>
 </head>
 
-<body>
+<body class="bg-spotify text-spotify-secondary mx-0">
+
+    <main class="container-fluid">
+        <div class="row row-cols-3">
+            <!--Sidebar sinistra-->
+            <div id="left-column" class="container-fluid p-0 d-none d-md-block lateral-column col-2 m-0 sticky-top">
+
+                <section id="left-column-content" class="position-relative">
+                    <!-- Blocco alto-->
+                    <div id="first-block" class="row row-cols-1 bg-black sticky-top mb-3">
+                        <!-- Icone 3 puntini -->
+                        <div>
+                            <!--Icona 3 puntini-->
+                            <div class="m-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-three-dots" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- 3 icone minimal -->
+                        <div>
+                            <!--Icona Home -->
+                            <div id="home-icon" class="m-1 mb-2 home-nav">
+                                <div class="row row-cols-2">
+                                    <!-- Icona -->
+                                    <div class="col-2">
+                                        <svg role="img" height="24" width="24" aria-hidden="true"
+                                            class="Svg-sc-ytk21e-0 haNxPq home-active-icon text-white d-none d-xxl-block"
+                                            viewBox="0 0 24 24" data-encore-id="icon" fill="white">
+                                            <path
+                                                d="M13.5 1.515a3 3 0 0 0-3 0L3 5.845a2 2 0 0 0-1 1.732V21a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6h4v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7.577a2 2 0 0 0-1-1.732l-7.5-4.33z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <!-- Testo -->
+                                    <div class="col-12 col-xxl-10">
+                                        <p class="text-truncate">Home</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Icona Search -->
+                            <div id="search-icon" class="m-1 mb-2">
+                                <div class="row row-cols-2">
+                                    <!-- Icona -->
+                                    <div class="col-2">
+                                        <svg role="img" height="24" width="24" aria-hidden="true"
+                                            class="Svg-sc-ytk21e-0 haNxPq search-icon d-none d-xxl-block"
+                                            viewBox="0 0 24 24" data-encore-id="icon" fill="white">
+                                            <path
+                                                d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 1 0 1.414-1.414l-4.344-4.344a9.157 9.157 0 0 0 2.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <!-- Testo-->
+                                    <div class="col-12 col-xxl-10">
+                                        <a href="./search.html" class="text-light text-decoration-none">
+                                            <p class="text-truncate" id="to-search">Cerca</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Icona libreria -->
+                            <div id="search-icon" class="m-1 mb-2">
+                                <div class="row row-cols-2">
+                                    <!-- Icona -->
+                                    <div class="col-2">
+                                        <svg role="img" height="24" width="24" aria-hidden="true" viewBox="0 0 24 24"
+                                            data-encore-id="icon" class="Svg-sc-ytk21e-0 haNxPq d-none d-xxl-block"
+                                            fill="white">
+                                            <path
+                                                d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <!-- Testo-->
+                                    <div class="col-12 col-xxl-10">
+                                        <p class="text-truncate">La tua libreria</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3 icone material -->
+                        <div class="mt-4">
+                            <!-- Icona Playlist -->
+                            <div id="playlist-icon" class="m-0 mb-2">
+                                <div class="row row-cols-2 align-items-center">
+                                    <!-- Icona -->
+                                    <div class="col-2">
+                                        <img src="./assets/imgs/main/nuova_playlist_icon.png" width="30px"
+                                            class="d-none d-xxl-block" />
+                                    </div>
+                                    <!-- Testo -->
+                                    <div class="col-12 col-xxl-10">
+                                        <p class="text-truncate">Crea playlist</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Icona Brani -->
+                            <div id="brani-icon" class="m-0 mb-2">
+                                <div class="row row-cols-2 align-items-center">
+                                    <!-- Icona -->
+                                    <div class="col-2">
+                                        <img src="./assets/imgs/main/brani_che_ti_piacciono_icon.jpg" width="30px"
+                                            class="d-none d-xxl-block" />
+                                    </div>
+                                    <!-- Testo -->
+                                    <div class="col-12 col-xxl-10">
+                                        <p class="text-truncate">Brani che ti piacciono</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Icona Episodi -->
+                            <div id="episodi-icon" class="m-0 mb-2">
+                                <div class="row row-cols-2 align-items-center">
+                                    <!-- Icona -->
+                                    <div class="col-2">
+                                        <img src="./assets/imgs/main/i_tuoi_episodi_icon.png" width="30px"
+                                            class="d-none d-xxl-block" />
+                                    </div>
+                                    <!-- Testo -->
+                                    <div class="col-12 col-xxl-10">
+                                        <p class="text-truncate">I tuoi episodi</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Separatore -->
+                        <div class="mt-3">
+                            <hr id="hr-separatore" class="" />
+                        </div>
+                    </div>
+
+                    <!-- Blocco basso -->
+                    <div id="second-block" class="bg-black" style="height: 100%">
+                        <!-- Libreria Main -->
+                        <div id="main-library" class="row row-cols-1 text-spotify-secondary">
+                            <div id="main-library" class="row row-cols-1 text-spotify-secondary">
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!--Sezione centrale Home Page-->
+            <div id="central-column" class="col-12 col-md-10 col-lg-8 p-0">
+                <section>
+                    <div class="row row-cols-3"></div>
+                    <!-- Barra in alto -->
+                    <div class="row row-cols-2 justify-content-between mt-1 me-1 ms-1">
+                        <!--Freccette-->
+                        <div>
+                            <a href="#" class="arrow-link" onclick="history.back()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="arrow-link" onclick="history.forward()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                </svg>
+                            </a>
+                        </div>
+                        <!--Profilo dropdown-->
+                        <div class="d-flex justify-content-end">
+                            <div class="dropdown">
+                                <button class="btn btn-dark m-2 dropdown-toggle" type="button" id="profilo"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="https://reteinformaticalavoro.it/images/company/6013edb782d88_300_300.png"
+                                        alt="Logo Epicode" class="mr-2" style="
+                          width: 30px;
+                          height: 30px;
+                          margin-right: 10px;
+                          border-radius: 50%;
+                          object-fit: cover;
+                          object-position: center;
+                        " />
+                                    <p style="margin-top: 2px !important">Epicode Buildweek2</p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Main-->
+                    <main>
+                        <!--Collapser annunci-->
+                        <div class="ms-auto">
+                            <p class="text-muted text-end mx-4 text-hover" id="collapser">
+                                Nascondi annunci
+                            </p>
+                        </div>
+                        <!-- Parte alta -->
+                        <div id="main-a" class="d-flex justify-content-start align-items-center m-4 mt-0 text-light">
+                            <img src="./assets/imgs/main/image-1.jpg" alt="album" id="imgAlbum"
+                                class="mx-3 my-4 p-2 d-none d-md-block" />
+                            <!-- Parte alta -->
+                            <div class="p-4 p-md-0">
+                                <h6>ALBUM</h6>
+                                <h1>Titolo Album in ascolto</h1>
+                                <p>Sottotitolo album</p>
+                                <p>
+                                    Ascolta il nuovo singolo di...
+                                </p>
+                                <!--Bottoni-->
+                                <div>
+                                    <button type="button"
+                                        class="btn btn-spotify text-dark rounded-pill fw-bold px-4 m-1 mt-3 me-3"
+                                        onclick="location.href='album.html?id=8668997'">
+                                        Play
+                                    </button>
+                                    <button type="button"
+                                        class="btn btn-outline-light rounded-pill fw-bold px-4 m-1 mt-3">
+                                        Salva
+                                    </button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-three-dots mx-3" viewBox="0 0 16 16">
+                                        <path
+                                            d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Schede alte-->
+                        <div>
+                            <!-- Saluto -->
+                            <h2 class="mb-1 mb-4 text-white" id="saluto" style="margin-left: 20px; display: inline">
+                            </h2>
+                            <h2 style="display: inline" class="text-white d-inline d-md-none">
+                                ,
+                            </h2>
+                            <div class="row row-cols-2 row-cols-lg-4 p-md-4">
+                                <!-- Lofi -->
+                                <div class="d-none d-md-block">
+                                    <div class="card mb-3" style="max-width: 540px">
+                                        <div class="row g-0 justify-content-center align-items-center h-100">
+                                            <div class="col-md-4">
+                                                <img src="./assets/imgs/main/image-5.jpg"
+                                                    class="img-fluid rounded-start h-100" alt="..." />
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title text-hover text-truncate"
+                                                        onclick="location.href='index.html?q=lofi'">
+                                                        Lofi beats
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Max Concentrazione -->
+                                <div class="d-none d-md-block">
+                                    <div class="card mb-3" style="max-width: 540px">
+                                        <div class="row g-0 justify-content-center align-items-center h-100">
+                                            <div class="col-md-4">
+                                                <img src="assets/imgs/main/image-3.jpg"
+                                                    class="img-fluid rounded-start h-100" alt="..." />
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title text-hover text-truncate"
+                                                        onclick="location.href='index.html?q=max'">
+                                                        Massima Concentrazione
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Canta sotto la doccia -->
+                                <div class="d-none d-md-block">
+                                    <div class="card mb-3" style="max-width: 540px">
+                                        <div class="row g-0 justify-content-center align-items-center h-100">
+                                            <div class="col-md-4">
+                                                <img src="./assets/imgs/main/image-9.jpg"
+                                                    class="img-fluid rounded-start h-100" alt="..." />
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title text-hover text-truncate"
+                                                        onclick="location.href='index.html?q=wholetthedogsout'">
+                                                        Canta sotto la doccia
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Jazz Vibes -->
+                                <div class="d-none d-md-block">
+                                    <div class="card mb-3" style="max-width: 540px">
+                                        <div class="row g-0 justify-content-center align-items-center h-100">
+                                            <div class="col-md-4">
+                                                <img src="assets/imgs/main/image-6.jpg"
+                                                    class="img-fluid rounded-start h-100" alt="..." />
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title text-hover text-truncate"
+                                                        onclick="location.href='index.html?q=jazz'">
+                                                        Jazz vibes
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Allenamento a casa -->
+                                <div class="d-none d-md-block">
+                                    <div class="card mb-3" style="max-width: 540px">
+                                        <div class="row g-0 justify-content-center align-items-center h-100">
+                                            <div class="col-md-4">
+                                                <img src="./assets/imgs/main/image-14.jpg"
+                                                    class="img-fluid rounded-start h-100" alt="..." />
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title text-hover text-truncate"
+                                                        onclick="location.href='index.html?q=likes'">
+                                                        Allenamento a casa
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Estate 2022 -->
+                                <div class="d-none d-md-block">
+                                    <div class="card mb-3" style="max-width: 540px">
+                                        <div class="row g-0 justify-content-center align-items-center h-100">
+                                            <div class="col-md-4">
+                                                <img src="assets/imgs/main/image-18.jpg"
+                                                    class="img-fluid rounded-start h-100" alt="..." />
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title text-hover text-truncate"
+                                                        onclick="location.href='index.html?q=summer'">
+                                                        Estate 2022
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Peaceful Piano -->
+                                <div class="d-none d-md-block">
+                                    <div class="card mb-3" style="max-width: 540px">
+                                        <div class="row g-0 justify-content-center align-items-center h-100">
+                                            <div class="col-md-4">
+                                                <img src="assets/imgs/main/image-4.jpg"
+                                                    class="img-fluid rounded-start h-100" alt="..." />
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title text-hover text-truncate"
+                                                        onclick="location.href='index.html?q=piano'">
+                                                        Peaceful Piano
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Street Culto  -->
+                                <div class="d-none d-md-block">
+                                    <div class="card mb-3" style="max-width: 540px">
+                                        <div class="row g-0 justify-content-center align-items-center h-100">
+                                            <div class="col-md-4">
+                                                <img src="./assets/imgs/main/image-19.jpg"
+                                                    class="img-fluid rounded-start h-100" alt="..." />
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title text-hover text-truncate"
+                                                        onclick="location.href='index.html?q=rickastley'">
+                                                        Street Culto
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Albums -->
+                        <div>
+                            <h3 class="mx-4 mb-4 text-white d-none d-md-block welcome-text">
+                                Altro di ciò che ti piace
+                            </h3>
+                            <h3 class="mx-4 mb-4 mx-4 text-white d-block d-md-none welcome-text">
+                                Consigliato per oggi
+                            </h3>
+
+                            <div class="container mt-4">
+                                <div class="row" id="row-to-append-children"></div>
+                            </div>
+                            <div class="d-flex justify-content-center" id="spinner-container">
+                                <div class="spinner-border text-success" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </section>
+            </div>
+
+            <!--Sidebar di destra-->
+            <div id="right-column" class="col-2 p-0 d-none d-lg-block lateral-column m-0 bg-black sticky-top">
+                <section id="right-column-content">
+                    <!-- Attività amici -->
+                    <div id="activities" class="row m-0 p-4 justify-content-between align-items-center text-white">
+                        <div class="col-8">
+                            <p class="text-truncate">Attività&nbsp;amici</p>
+                        </div>
+                        <div class="text-end col-12 col-xxl-4">
+                            <img src="./assets/imgs/main/add_friends_icon.png" width="25px" />
+                            <img src="./assets/imgs/main/delete_icon.png" width="25px" />
+                        </div>
+                    </div>
+                    <!-- Amichetti -->
+                    <div id="friends" class="row row-cols-1 pt-0 p-3 text-spotify-secondary">
+                        <div>
+                            <!-- Amico 1-->
+                            <div class="row row-cols-2 m-1">
+                                <!-- propic -->
+                                <div class="col-12 col-xxl-2 p-1">
+                                    <img src="" class="friend-propic" />
+                                </div>
+                                <!-- Musica -->
+                                <div class="col-12 col-md-10">
+                                    <div class="row">
+                                        <!-- Nome -->
+                                        <div>
+                                            <h6 class="friend-name text-hover">Nome amico 1</h6>
+                                        </div>
+                                        <!-- Canzone / artista -->
+                                        <div>
+                                            <p class="friend-music">
+                                                <span class="friend-song text-hover">Canzone preferita</span>
+                                                •
+                                                <span class="friend-artist text-hover">Artista preferito</span>
+                                            </p>
+                                        </div>
+                                        <!-- Album -->
+                                        <div>
+                                            <p class="friend-music text-hover">
+                                                <img src="./assets/imgs/main/vinyl_icon.svg" width="10px" />
+                                                <span class="friend-artist text-hover">Album preferito</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Amico 2-->
+                            <div class="row m-1 mt-4">
+                                <!-- propic -->
+                                <div class="col-12 col-xxl-2 p-1">
+                                    <img src="" class="friend-propic" />
+                                </div>
+                                <!-- Musica -->
+                                <div class="col-12 col-md-10">
+                                    <div class="row">
+                                        <!-- Nome -->
+                                        <div>
+                                            <h6 class="friend-name text-hover">Nome amico 2</h6>
+                                        </div>
+                                        <!-- Canzone / artista -->
+                                        <div>
+                                            <p class="friend-music">
+                                                <span class="friend-song text-hover">Canzone preferita</span>
+                                                •
+                                                <span class="friend-artist text-hover">Artista preferito</span>
+                                            </p>
+                                        </div>
+                                        <!-- Album -->
+                                        <div>
+                                            <p class="friend-music">
+                                                <img src="./assets/imgs/main/vinyl_icon.svg" width="10px" />
+                                                <span class="friend-artist text-hover">Album preferito</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Amico 3-->
+                            <div class="row m-1 mt-4">
+                                <!-- propic -->
+                                <div class="col-12 col-xxl-2 p-1">
+                                    <img src="" class="friend-propic" />
+                                </div>
+                                <!-- Musica -->
+                                <div class="col-12 col-md-10">
+                                    <div class="row">
+                                        <!-- Nome -->
+                                        <div>
+                                            <h6 class="friend-name text-hover">Nome amico 3</h6>
+                                        </div>
+                                        <!-- Canzone / artista -->
+                                        <div>
+                                            <p class="friend-music">
+                                                <span class="friend-song text-hover">Canzone preferita</span>
+                                                •
+                                                <span class="friend-artist text-hover">Artista preferito</span>
+                                            </p>
+                                        </div>
+                                        <!-- Album -->
+                                        <div>
+                                            <p class="friend-music text-hover">
+                                                <img src="./assets/imgs/main/vinyl_icon.svg" width="10px" />
+                                                <span class="friend-artist">Album preferito</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Amico 4-->
+                            <div class="row m-1 mt-4">
+                                <!-- propic -->
+                                <div class="col-12 col-xxl-2 p-1">
+                                    <img src="" class="friend-propic" />
+                                </div>
+                                <!-- Musica -->
+                                <div class="col-12 col-md-10">
+                                    <div class="row">
+                                        <!-- Nome -->
+                                        <div>
+                                            <h6 class="friend-name text-hover">Nome amico 4</h6>
+                                        </div>
+                                        <!-- Canzone / artista -->
+                                        <div>
+                                            <p class="friend-music text-hover">
+                                                <span class="friend-song text-hover">Canzone preferita</span>
+                                                •
+                                                <span class="friend-artist text-hover">Artista preferito</span>
+                                            </p>
+                                        </div>
+                                        <!-- Album -->
+                                        <div>
+                                            <p class="friend-music text-hover">
+                                                <img src="./assets/imgs/main/vinyl_icon.svg" width="10px" />
+                                                <span class="friend-artist">Album preferito</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Amico 5-->
+                            <div class="row m-1 mt-4">
+                                <!-- propic -->
+                                <div class="col-12 col-xxl-2 p-1">
+                                    <img src="" class="friend-propic" />
+                                </div>
+                                <!-- Musica -->
+                                <div class="col-12 col-md-10">
+                                    <div class="row">
+                                        <!-- Nome -->
+                                        <div>
+                                            <h6 class="friend-name text-hover">Nome amico 5</h6>
+                                        </div>
+                                        <!-- Canzone / artista -->
+                                        <div>
+                                            <p class="friend-music">
+                                                <span class="friend-song text-hover">Canzone preferita</span>
+                                                •
+                                                <span class="friend-artist text-hover">Artista preferito</span>
+                                            </p>
+                                        </div>
+                                        <!-- Album -->
+                                        <div>
+                                            <p class="friend-music text-hover">
+                                                <img src="./assets/imgs/main/vinyl_icon.svg" width="10px" />
+                                                <span class="friend-artist">Album preferito</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Amico 6 -->
+                            <div class="row m-1 mt-4">
+                                <!-- propic -->
+                                <div class="col-12 col-xxl-2 p-1">
+                                    <img src="" class="friend-propic" />
+                                </div>
+                                <!-- Musica -->
+                                <div class="col-12 col-md-10">
+                                    <div class="row">
+                                        <!-- Nome -->
+                                        <div>
+                                            <h6 class="friend-name text-hover">Nome amico 6</h6>
+                                        </div>
+                                        <!-- Canzone / artista -->
+                                        <div>
+                                            <p class="friend-music">
+                                                <span class="friend-song text-hover">Canzone preferita</span>
+                                                •
+                                                <span class="friend-artist text-hover">Artista preferito</span>
+                                            </p>
+                                        </div>
+                                        <!-- Album -->
+                                        <div>
+                                            <p class="friend-music text-hover">
+                                                <img src="./assets/imgs/main/vinyl_icon.svg" width="10px" />
+                                                <span class="friend-artist text-truncate">Album preferito</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+
+    </main>
+
+    <div class="m-6">&nbsp;</div>
+
+    <!-- Lettore musicale nascosto-->
+    <div class="d-none">
+        <audio id="myAudio">
+            <source src="" type="audio/mpeg" class="audio-player-source" />
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <!-- Footer Tablet / Desktop -->
+    <footer id="footer" class="d-none d-md-block footer-player fixed-bottom bg-spotify-player">
+        <div class="row d-flex justify-between align-items-center">
+            <!-- Album cover -->
+            <div id="player-album" class="col-4">
+                <div class="row align-items-center">
+                    <!-- Immagine -->
+                    <div class="col-2 p-3 d-none d-xxl-block">
+                        <img src="./assets/imgs/main/invisible.png" width="50px" height="50px" class="footer-album-cover" />
+                    </div>
+                    <!-- Canzone e Artista -->
+                    <div class="col-6 p-3">
+                        <div class="row row-cols-1 fs-7">
+                            <div class="text-white text-hover text-truncate footer-album-song">
+                                Nessuna canzone selezionata
+                            </div>
+                            <div class="text-hover text-truncate footer-album-artist artist-redirect">
+                                Nessun artista selezionato
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cuore -->
+                    <div class="col-1 p-3">
+                        <img src="./assets/imgs/main/heart_icon.png" width="15px" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Audio player -->
+            <div id="player-player" class="col-8 col-xl-4">
+                <!-- Player bar-->
+                <div id="player-bar">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-1 fs-8 text-truncate audio-time song-timestamp"></div>
+                        <div class="col-9">
+                            <input type="range" min="1" max="30" value="0" disabled class="audio-slider"
+                                style="width: 100%; height: 2px" />
+                        </div>
+                        <div class="col-1 fs-8 p-0 text-truncate audio-time song-duration"></div>
+                    </div>
+                </div>
+                <!-- pulsanti -->
+                <div class="row align-items-center justify-content-center">
+                    <!-- Shuffle -->
+                    <div class="col-1">
+                        <img src="./assets/imgs/main/shuffle_icon.svg" />
+                    </div>
+                    <!-- Indietro -->
+                    <div class="col-2 col-lg-1 text-center">
+                        <img src="./assets/imgs/main/skip-start-fill_icon.svg" />
+                    </div>
+                    <!-- Centrale -->
+                    <div class="col-1" onclick="playAudio()">
+                        <div class="row row-cols-1 justify-content-center">
+                            <div class="player-button">
+                                <img class="player-button-icon play-player-image"
+                                    src="./assets/imgs/main/play-fill_icon.svg" />
+                                <img src="./assets/imgs/main/pause-fill-white_icon.svg" class="pause-player-image d-none" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Avanti -->
+                    <div class="col-2 col-lg-1 text-center">
+                        <img src="./assets/imgs/main/skip-end-fill_icon.svg" />
+                    </div>
+                    <!-- Repeat -->
+                    <div class="col-1">
+                        <img src="./assets/imgs/main/repeat_icon.svg" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Impostazioni Audio -->
+            <div id="player-options" class="col-4 d-none d-xl-block">
+                <div class="row align-items-center justify-content-end m-0">
+                    <!-- Microfono -->
+                    <div class="col-1">
+                        <img src="./assets/imgs/main/microphone_icon.png" width="15px" />
+                    </div>
+
+                    <!-- Lista -->
+                    <div class="col-1">
+                        <img src="./assets/imgs/main/list_icon.svg" width="15px" />
+                    </div>
+
+                    <!-- Casse -->
+                    <div class="col-1">
+                        <img src="./assets/imgs/main/speaker_icon.svg" width="15px" />
+                    </div>
+
+                    <!-- Audio -->
+                    <div class="col-1 col-xl-3">
+                        <div class="row">
+                            <div class="col-xl-1 mb-1">
+                                <img src="./assets/imgs/main/volume-down_icon.svg" style="color: white" />
+                            </div>
+                            <div class="col-9">
+                                <input type="range" id="slider" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FullScreen -->
+                    <div class="col-1">
+                        <img src="./assets/imgs/main/arrows-angle-expand_icon.svg" width="15px" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Footer mobile -->
+    <footer id="footer-mobile" class="d-block d-md-none fixed-bottom text-white">
+        <!-- Player nel footer -->
+        <div class="row m-3 p-2 bg-spotify-welcome-card rounded justify-content-center align-items-center">
+            <!-- Canzone -->
+            <div id="scroll-container" class="col-8">
+                <div id="scroll-text" class="p-2 scroll-text">
+                    Nessuna&nbsp;canzone&nbsp;-&nbsp;selezionata
+                </div>
+            </div>
+            <!-- Casse -->
+            <div class="col-1 p-1">
+                <img src="./assets/imgs/main/speaker_icon.svg" width="20px" />
+            </div>
+            <!-- Cuore -->
+            <div class="col-1 p-1">
+                <img src="./assets/imgs/main/heart_icon.png" width="20px" />
+            </div>
+            <div class="col-1 p-1">
+                <img src="./assets/imgs/main/play-fill_icon.svg" width="30px" onclick="playAudio()"
+                    class="play-player-image" />
+
+                <img src="./assets/imgs/main/pause-fill-white_icon.svg" width="30px" onclick="playAudio()"
+                    class="pause-player-image d-none" />
+            </div>
+        </div>
+        <!-- Menù-->
+        <div class="container-fluid bottom-nav p-3">
+            <div class="row justify-content-center align-items-center">
+                <!-- Home -->
+                <div class="col-3" onclick="location.href='index.html'">
+                    <div class="row row-cols-1 align-items-center justify-content-center home-nav">
+                        <div class="text-center">
+                            <svg role="img" height="24" width="24" aria-hidden="true"
+                                class="Svg-sc-ytk21e-0 haNxPq home-active-icon text-white text-center"
+                                viewBox="0 0 24 24" data-encore-id="icon" fill="white">
+                                <path
+                                    d="M13.5 1.515a3 3 0 0 0-3 0L3 5.845a2 2 0 0 0-1 1.732V21a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6h4v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7.577a2 2 0 0 0-1-1.732l-7.5-4.33z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="text-center">Home</div>
+                    </div>
+                </div>
+                <!-- Cerca -->
+                <div class="col-3" onclick="location.href='search.html'">
+                    <div class="row row-cols-1 align-items-center justify-content-center">
+                        <div class="text-center">
+                            <svg role="img" height="24" width="24" aria-hidden="true"
+                                class="Svg-sc-ytk21e-0 haNxPq search-icon" viewBox="0 0 24 24" data-encore-id="icon"
+                                fill="white">
+                                <path
+                                    d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 1 0 1.414-1.414l-4.344-4.344a9.157 9.157 0 0 0 2.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="text-center">Cerca</div>
+                    </div>
+                </div>
+                <!-- Libreria-->
+                <div class="col-3">
+                    <div class="row row-cols-1 align-items-center justify-content-center">
+                        <div class="text-center">
+                            <svg role="img" height="24" width="24" aria-hidden="true" viewBox="0 0 24 24"
+                                data-encore-id="icon" class="Svg-sc-ytk21e-0 haNxPq" fill="white">
+                                <path
+                                    d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="text-center">La tua libreria</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
 
 </body>
 
