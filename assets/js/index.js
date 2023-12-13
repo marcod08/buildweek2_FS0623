@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="card">
                     <img src="${album.album.cover_medium}" class="card-img-top" alt="${album.album.title}">
                     <div class="card-body" style="height: 8rem; overflow:hidden;">
-                        <h5 class="card-title">${album.album.title}</h5>
-                        <p class="card-text">${album.artist.name}</p>
+                        <h5 class="card-title"><a href="./album.html?id=${album.id}" class="text-light text-decoration-none">${album.album.title}</a></h5>
+                        <p class="card-text"><a href="./artist.html?id=${album.artist.id}" class="text-light text-decoration-none">${album.artist.name}</a></p>
                     </div>
                 </div>
             `;
