@@ -17,16 +17,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         nascondiSpinner ();
 
-        data.tracks.data.forEach(album => {
+        data.tracks.data.forEach(element => {
             const albumCard = document.createElement('div');
             albumCard.classList.add('col-6', 'col-md-3', 'mb-4', 'h-100', 'my-3', 'p-1');
 
             albumCard.innerHTML = `
                 <div class="card">
-                    <img src="${album.album.cover_medium}" class="card-img-top" alt="${album.album.title}">
+                    <a href="./album.html?id=${element.album.id}"><img src="${element.album.cover_medium}" class="card-img-top" alt="${element.album.title}"></a>
                     <div class="card-body" style="height: 8rem; overflow:hidden;">
-                        <h5 class="card-title"><a href="./album.html?id=${album.id}" class="text-light text-decoration-none">${album.album.title}</a></h5>
-                        <p class="card-text"><a href="./artist.html?id=${album.artist.id}" class="text-light text-decoration-none">${album.artist.name}</a></p>
+                        <h5 class="card-title"><a href="./album.html?id=${element.album.id}" class="text-light text-decoration-none">${element.album.title}</a></h5>
+                        <p class="card-text"><a href="./artist.html?id=${element.artist.id}" class="text-light text-decoration-none">${element.artist.name}</a></p>
                     </div>
                 </div>
             `;
