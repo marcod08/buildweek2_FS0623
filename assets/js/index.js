@@ -44,3 +44,13 @@ function nascondiSpinner () {
     const spinnerContainer = document.getElementById('spinner-container');
     spinnerContainer.classList.add('d-none')
 }
+//right-column aside div//
+
+const centralColumn = document.querySelector('#central-column')
+const xIconFriend = document.querySelector('#xIconFriend')
+
+xIconFriend.addEventListener('click', () => {
+    centralColumn.classList.remove('col-lg-8')
+    centralColumn.classList.add('col-lg-10')
+})
+//right-column aside div//
