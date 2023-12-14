@@ -116,7 +116,7 @@ function getDiscography(artistId) {
             const discographyContainer = document.querySelector('.discography');
             albums.forEach(album => {
                 const releaseDate = new Date(album.release_date);
-const year = releaseDate.getFullYear();
+                const year = releaseDate.getFullYear();
                 const albumCard = document.createElement('div');
                 albumCard.className = 'col-6 col-md-3 my-3 mb-3 p-1 h-100';
                 albumCard.innerHTML = `
