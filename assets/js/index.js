@@ -10,34 +10,36 @@ document.addEventListener('DOMContentLoaded', function () {
             'X-RapidAPI-Key': apiKey,
         }
     })
-    .then(response => response.json())
-    .then(data => {
-        // Popolo il contenitore con i dati
-        const container = document.getElementById('row-to-append-children');
+        .then(response => response.json())
+        .then(data => {
+            // Popolo il contenitore con i dati
+            const container = document.getElementById('row-to-append-children');
 
-        nascondiSpinner ();
+            nascondiSpinner();
 
-        data.tracks.data.forEach(element => {
-            const albumCard = document.createElement('div');
-            albumCard.classList.add('col-6', 'col-md-3', 'mb-4', 'h-100', 'my-3', 'p-1');
+            data.tracks.data.forEach(element => {
+                const albumCard = document.createElement('div');
+                albumCard.classList.add('col-6', 'col-md-3', 'my-3', 'h-100', 'p-1');
 
-            albumCard.innerHTML = `
-                <div class="card">
-                    <a href="./album.html?id=${element.album.id}"><img src="${element.album.cover_medium}" class="card-img-top" alt="${element.album.title}"></a>
-                    <div class="card-body" style="height: 8rem; overflow:hidden;">
-                        <h5 class="card-title"><a href="./album.html?id=${element.album.id}" class="text-light text-decoration-none">${element.album.title}</a></h5>
-                        <p class="card-text"><a href="./artist.html?id=${element.artist.id}" class="text-light text-decoration-none">${element.artist.name}</a></p>
+                albumCard.innerHTML = `
+                <div class="bg-spotify-card spotify-card"
+                  <div class="card bg-card card-container h-100">
+                  <a href="./album.html?id=${element.album.id}"><img src="${element.album.cover_medium}" class="card-img-top spotify-card-image" alt="${element.album.title}"></a>
+                  <div class="card-body px-3 py-4">
+                        <h5 class="card-title album-redirect text-truncate" id="card-title"><a href="./album.html?id=${element.album.id}" class="text-light text-decoration-none">${element.album.title}</a></h5>
+                        <p class="card-text artist-redirect text-truncate" id="card-text"><a href="./artist.html?id=${element.artist.id}" class="text-light text-decoration-none">${element.artist.name}</a></p>
                     </div>
+                  </div>
                 </div>
             `;
 
-            container.appendChild(albumCard);
-        });
-    })
-    .catch(error => console.error('Error fetching data:', error));
+                container.appendChild(albumCard);
+            });
+        })
+        .catch(error => console.error('Error fetching data:', error));
 });
 
-function nascondiSpinner () {
+function nascondiSpinner() {
     const spinnerContainer = document.getElementById('spinner-container');
     spinnerContainer.classList.add('d-none')
 }
@@ -82,6 +84,6 @@ function mostraSaluto() {
 }
 
 // Esegui la funzione al caricamento della pagina
-window.onload = function() {
+window.onload = function () {
     mostraSaluto();
 };
