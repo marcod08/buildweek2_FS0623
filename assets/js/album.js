@@ -20,11 +20,11 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(data => {
             const container = document.querySelector('#artist-container')
             console.log(data)
-            container.innerHTML =`<div id="album-image" class="col-4">
+            container.innerHTML =`<div id="album-image" class="col-9 col-sm-4">
             <img class="mx-3 my-4 p-2 get-hex" id="album-cover-img" src="${data.cover_big}" alt="Album cover">
         </div>
-        <div>
-            <p class="album-title">ALBUM</p>
+        <div class="album-text p-4">
+            <p class="album-title d-none d-sm-block">ALBUM</p>
             <h1 class="album-name">${data.title}</h1>
             <p>
                 <span class="img-rounded artist-redirect text-hover"><img class="rounded-circle" width="25" src=${data.artist.picture_small}></img></span>
