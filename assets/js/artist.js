@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Ottieni l'ID dell'artista dalla query string
     const urlParams = new URLSearchParams(window.location.search);
     const artistId = urlParams.get('id');
-   
+
     getArtistInfo(artistId);
 
     getPopularSongs(artistId);
@@ -37,35 +37,35 @@ function getPopularSongs(artistId) {
             const songs = data.data || [];
 
             const popularSongsList = document.getElementById('popular-songs');
-            popularSongsList.classList.add('row'); 
+            popularSongsList.classList.add('row');
 
             songs.forEach((song, index) => {
                 const colItem = document.createElement('div');
-                colItem.classList.add('col-md-12', 'mb-3'); 
+                colItem.classList.add('col-md-12', 'mb-3');
 
                 const listItem = document.createElement('div');
                 listItem.classList.add('list-group-item', 'd-flex', 'align-items-center', 'text-white');
 
                 // Numero progressivo
                 const rankNumber = document.createElement('span');
-                rankNumber.classList.add('badge', 'me-3');
+                rankNumber.classList.add('badge', 'me-3', 'col-1');
                 rankNumber.textContent = index + 1;
 
                 // Immagine dell'album
                 const albumImage = document.createElement('img');
                 albumImage.src = song.album.cover_small;
                 albumImage.alt = song.title;
-                albumImage.classList.add('flex-direction-column', 'me-3', 'img-fluid');
+                albumImage.classList.add('flex-direction-column', 'me-3', 'img-fluid', 'col-1');
 
                 // Titolo del brano
                 const songTitle = document.createElement('span');
                 songTitle.textContent = song.title;
-                songTitle.classList.add('me-3');
+                songTitle.classList.add('me-3', 'col-6');
 
                 // Numero di ascolti
                 const listeners = document.createElement('span');
                 listeners.textContent = `${song.rank}`;
-                listeners.classList.add('text-opacity', 'opacity-50', 'ms-auto')
+                listeners.classList.add('text-opacity', 'opacity-50', 'ms-auto', 'col-2')
 
                 // Durata
                 const durationSong = document.createElement('span');
@@ -73,7 +73,7 @@ function getPopularSongs(artistId) {
                 const seconds = song.duration % 60;
                 const formattedDuration = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
                 durationSong.textContent = `${formattedDuration}`;
-                durationSong.classList.add('text-opacity', 'opacity-50', 'ms-auto');
+                durationSong.classList.add('text-opacity', 'opacity-50', 'ms-auto', 'col-2');
 
                 // Aggiungi gli elementi al listItem
                 listItem.appendChild(rankNumber);
@@ -116,14 +116,16 @@ function getDiscography(artistId) {
             const discographyContainer = document.querySelector('.discography');
             albums.forEach(album => {
                 const albumCard = document.createElement('div');
-                albumCard.className = 'col-6 col-md-3 mb-3';
+                albumCard.className = 'col-6 col-md-3 my-3 mb-3 p-1 h-100';
                 albumCard.innerHTML = `
-                    <div class="card">
-                        <img src="${album.cover_medium}" class="card-img-top" alt="${album.title}" />
+                    <div class="spotify-card bg-spotify-card">
+                      <div class="card h-100 bg-card card-container">
+                        <img src="${album.cover_medium}" class="card-img-top spotify-card-image p-2" alt="${album.title}" />
                         <div class="card-body">
-                            <h6 class="card-title">${album.title}</h6>
+                            <h6 class="card-title album-redirect text-hover text-truncate" id="card-title"><a href="./album.html?id=${album.id}" class="text-light text-decoration-none">${album.title}<a/></h6>
                             <p class="card-text">${album.release_date}</p>
                         </div>
+                      </div>  
                     </div>
                 `;
                 discographyContainer.appendChild(albumCard);
