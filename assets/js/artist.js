@@ -115,6 +115,8 @@ function getDiscography(artistId) {
             // Popola la discografia nella pagina HTML
             const discographyContainer = document.querySelector('.discography');
             albums.forEach(album => {
+                const releaseDate = new Date(album.release_date);
+                const year = releaseDate.getFullYear();
                 const albumCard = document.createElement('div');
                 albumCard.className = 'col-6 col-md-3 my-3 mb-3 p-1 h-100';
                 albumCard.innerHTML = `
@@ -123,7 +125,7 @@ function getDiscography(artistId) {
                         <img src="${album.cover_medium}" class="card-img-top spotify-card-image p-2" alt="${album.title}" />
                         <div class="card-body">
                             <h6 class="card-title album-redirect text-hover text-truncate" id="card-title"><a href="./album.html?id=${album.id}" class="text-light text-decoration-none">${album.title}<a/></h6>
-                            <p class="card-text">${album.release_date}</p>
+                            <p class="card-text">${year} • Album</p>
                         </div>
                       </div>  
                     </div>
