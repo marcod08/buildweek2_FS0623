@@ -124,7 +124,7 @@ function getDiscography(artistId) {
                       <div class="card h-100 bg-card card-container">
                         <img src="${album.cover_medium}" class="card-img-top spotify-card-image p-2" alt="${album.title}" />
                         <div class="card-body">
-                            <h6 class="card-title album-redirect text-hover text-truncate" id="card-title"><a href="./album.html?id=${album.id}" class="text-light text-decoration-none">${album.title}<a/></h6>
+                            <h6 class="card-title album-redirect text-hover text-decoration-none text-truncate" id="card-title"><a href="./album.html?id=${album.id}" class="text-light text-decoration-none">${album.title}<a/></h6>
                             <p class="card-text">${year} • Album</p>
                         </div>
                       </div>  
