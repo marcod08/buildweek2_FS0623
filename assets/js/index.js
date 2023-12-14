@@ -1,9 +1,10 @@
-const apiEndpoint = 'https://deezerdevs-deezer.p.rapidapi.com/playlist/10557';
-const apiKey = '6e85a2755bmsh8d7d68ee0f84f37p153c1djsn4c09afbb6f6d';
+const apiEndpoint = 'https://deezerdevs-deezer.p.rapidapi.com/search?q=';
+const apiKey = '282dc36a1cmsh8c330e4f006a015p1f7d11jsn69398e5693d6';
+const q = new URLSearchParams(window.location.search).get('q');
 
 document.addEventListener('DOMContentLoaded', function () {
     // Fetch dei data da Deezer API
-    fetch(apiEndpoint, {
+    fetch(apiEndpoint + q, {
         method: 'GET',
         headers: {
             'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com',
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             nascondiSpinner();
 
-            data.tracks.data.forEach(element => {
+            data.data.forEach(element => {
                 const albumCard = document.createElement('div');
                 albumCard.classList.add('col-6', 'col-md-3', 'my-3', 'h-100', 'p-1');
 
