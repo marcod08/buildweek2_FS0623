@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <h1 class="album-name">${data.title}</h1>
             <p>
                 <span class="img-rounded artist-redirect text-hover"><img class="rounded-circle" width="25" src=${data.artist.picture_small}></img></span>
-                <span class="artist-name artist-redirect text-hover">${data.artist.name}</span>
+                <span class="artist-name artist-redirect text-hover"><a class="text-light" href="artist.html?id=${data.artist.id}">${data.artist.name}</a></span>
                 • <span class="album-year">${data.release_date} </span> •
                 <span class="tracks-number">${data.nb_tracks} brani</span>,
                 <span class="album-duration">${parseInt(data.duration/60)} min</span>
@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', function () {
          let innerHTMLContent = ''
          songs.forEach((song,index)=>{
             innerHTMLContent +=`
-         <div class="col-1 d-none d-md-block">${index+1}</div>
-         <div class="col-8 col-md-7">${song.title}</div>
+         <div class="col-1 d-none d-md-block my-3">${index+1}</div>
+         <div class="col-8 col-md-7"><p>${song.title}</p><p class="text-secondary">${song.artist.name}</p></div>
          <div class="d-none d-md-block col-2 text-truncate">
              ${song.rank}
          </div>
