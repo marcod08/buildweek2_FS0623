@@ -1,4 +1,4 @@
-const apiEndpoint = 'https://deezerdevs-deezer.p.rapidapi.com/playlist/115495';
+const apiEndpoint = 'https://deezerdevs-deezer.p.rapidapi.com/playlist/10557';
 const apiKey = '6e85a2755bmsh8d7d68ee0f84f37p153c1djsn4c09afbb6f6d';
 
 document.addEventListener('DOMContentLoaded', function () {
