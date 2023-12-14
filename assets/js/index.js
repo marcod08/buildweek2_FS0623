@@ -51,3 +51,37 @@ xIconFriend.addEventListener('click', () => {
     centralColumn.classList.add('col-lg-10')
 })
 //right-column aside div//
+
+
+//Funzione per il saluto//
+function saluto() {
+    let ora = new Date().getHours();
+    let saluto;
+
+    if (ora >= 5 && ora < 12) {
+        saluto = "Buongiorno";
+    } else if (ora >= 12 && ora < 18) {
+        saluto = "Buon pomeriggio";
+    } else {
+        saluto = "Buonasera";
+    }
+
+    return saluto;
+}
+
+// Utilizzo della funzione per ottenere il saluto in base all'ora attuale
+let messaggioSaluto = saluto();
+console.log(messaggioSaluto);
+
+// Funzione per inserire il saluto nell'elemento con id "saluto"
+function mostraSaluto() {
+    let elementoSaluto = document.getElementById("saluto");
+    if (elementoSaluto) {
+        elementoSaluto.textContent = saluto();
+    }
+}
+
+// Esegui la funzione al caricamento della pagina
+window.onload = function() {
+    mostraSaluto();
+};
