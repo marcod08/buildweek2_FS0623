@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Ottieni l'ID dell'artista dalla query string
     const urlParams = new URLSearchParams(window.location.search);
-    //const artistId = urlParams.get('id');
-    const artistId = 51  //{id per provare se la pagina carica correttamente i dati (da cancellare poi una volta collegati gli ID)}
+    const artistId = urlParams.get('id');
+    //const artistId = 51  //{id per provare se la pagina carica correttamente i dati (da cancellare poi una volta collegati gli ID)}
    
     // Chiamata per ottenere informazioni sull'artista
     getArtistInfo(artistId);
@@ -47,7 +47,7 @@ function getPopularSongs(artistId) {
 
             songs.forEach((song, index) => {
                 const colItem = document.createElement('div');
-                colItem.classList.add('col-md-12', 'mb-3'); // Specifica la classe 'col-md-4' per impostare la larghezza della colonna su dispositivi medi
+                colItem.classList.add('col-md-12', 'mb-3'); 
 
                 const listItem = document.createElement('div');
                 listItem.classList.add('list-group-item', 'd-flex', 'align-items-center', 'text-white');
