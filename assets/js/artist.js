@@ -1,20 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Ottieni l'ID dell'artista dalla query string
     const urlParams = new URLSearchParams(window.location.search);
-    //const artistId = urlParams.get('id');
-    const artistId = 51  //{id per provare se la pagina carica correttamente i dati (da cancellare poi una volta collegati gli ID)}
+    const artistId = urlParams.get('id');
    
-    // Chiamata per ottenere informazioni sull'artista
     getArtistInfo(artistId);
 
-    // Chiamata per ottenere i brani popolari dell'artista
     getPopularSongs(artistId);
 
-
-    // Chiamata per ottenere la discografia dell'artista
     getDiscography(artistId);
 
-    // Chiamata per nascondere lo spinner
     nascondiSpinner()
 });
 
@@ -43,11 +37,11 @@ function getPopularSongs(artistId) {
             const songs = data.data || [];
 
             const popularSongsList = document.getElementById('popular-songs');
-            popularSongsList.classList.add('row'); // Aggiungi la classe 'row' al contenitore dei brani popolari
+            popularSongsList.classList.add('row'); 
 
             songs.forEach((song, index) => {
                 const colItem = document.createElement('div');
-                colItem.classList.add('col-md-12', 'mb-3'); // Specifica la classe 'col-md-4' per impostare la larghezza della colonna su dispositivi medi
+                colItem.classList.add('col-md-12', 'mb-3'); 
 
                 const listItem = document.createElement('div');
                 listItem.classList.add('list-group-item', 'd-flex', 'align-items-center', 'text-white');
