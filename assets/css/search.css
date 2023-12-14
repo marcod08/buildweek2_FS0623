@@ -1,14 +1,90 @@
+::placeholder{
+    color: rgb(206, 206, 206) !important;
+}
+
 .sfoglia-box
 {
-    height: 150px;
-    width: 150px;
+    height: 7em;
+    width: 12em;
     border-radius: 20px;
     cursor: pointer;
-    background-color: #000000 !important;
     position: relative;
     overflow: hidden;
     z-index: 1;
-    margin:5px
+    margin:0.5em
+}
+
+.blocchetti .sfoglia-box:nth-child(1){
+    background-color: rgb(199, 4, 4);
+}
+.blocchetti .sfoglia-box:nth-child(2){
+    background-color: rgb(3, 3, 117);
+}
+.blocchetti .sfoglia-box:nth-child(3){
+    background-color: rgb(255, 0, 153);
+}
+.blocchetti .sfoglia-box:nth-child(4){
+    background-color: rgb(0, 255, 60);
+}
+.blocchetti .sfoglia-box:nth-child(5){
+    background-color: rgb(255, 179, 0);
+}
+.blocchetti .sfoglia-box:nth-child(6){
+    background-color: rgb(255, 115, 0);
+}
+.blocchetti .sfoglia-box:nth-child(7){
+    background-color: red;
+}
+.blocchetti .sfoglia-box:nth-child(8){
+    background-color: rgb(187, 0, 255);
+}
+.blocchetti .sfoglia-box:nth-child(9){
+    background-color: rgb(3, 3, 117);
+}
+.blocchetti .sfoglia-box:nth-child(10){
+    background-color: rgb(199, 4, 4);
+}
+.blocchetti .sfoglia-box:nth-child(11){
+    background-color: rgb(255, 0, 136);
+}
+.blocchetti .sfoglia-box:nth-child(12){
+    background-color: rgb(187, 0, 255);
+}
+.blocchetti .sfoglia-box:nth-child(13){
+    background-color: rgb(255, 179, 0);
+}
+.blocchetti .sfoglia-box:nth-child(14){
+    background-color: rgb(0, 255, 60);
+}
+.blocchetti .sfoglia-box:nth-child(15){
+    background-color: rgb(3, 3, 117);
+}
+.blocchetti .sfoglia-box:nth-child(16){
+    background-color: rgb(255, 115, 0);
+}
+.blocchetti .sfoglia-box:nth-child(17){
+    background-color: rgb(0, 255, 60);
+}
+.blocchetti .sfoglia-box:nth-child(18){
+    background-color: rgb(199, 4, 4);
+}
+.blocchetti .sfoglia-box:nth-child(19){
+    background-color: rgb(187, 0, 255);
+}
+.blocchetti .sfoglia-box:nth-child(20){
+    background-color: red;
+}
+.blocchetti .sfoglia-box:nth-child(21){
+    background-color: rgb(255, 0, 136);
+}
+.blocchetti .sfoglia-box:nth-child(22){
+    background-color: rgb(3, 3, 117);
+}
+.blocchetti .sfoglia-box:nth-child(23){
+    background-color: rgb(255, 179, 0);
+}
+.blocchetti .sfoglia-box:nth-child(24){
+    background-color: rgb(0, 255, 60);
 }
 
 .sfoglia-img
