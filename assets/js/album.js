@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(data => {
             const container = document.querySelector('#artist-container')
+            const container2 = document.querySelector('#container2')
+            const songs = data.tracks.data
+            let index = 0
             console.log(data)
             container.innerHTML =`<div id="album-image" class="col-9 col-sm-4">
             <img class="mx-3 my-4 p-2 get-hex" id="album-cover-img" src="${data.cover_big}" alt="Album cover">
@@ -35,6 +38,21 @@ document.addEventListener('DOMContentLoaded', function () {
             </p>
         </div>
          `
+         let innerHTMLContent = ''
+         songs.forEach((song,index)=>{
+            innerHTMLContent +=`
+         <div class="col-1 d-none d-md-block">${index+1}</div>
+         <div class="col-8 col-md-7">${song.title}</div>
+         <div class="d-none d-md-block col-2 text-truncate">
+             ${song.rank}
+         </div>
+         <div class="col-1 d-none d-md-block"></div>
+         <div class="col-1 d-none d-md-block">
+             ${parseInt(song.duration/60)}min
+         </div>
+         `
+         container2.innerHTML = innerHTMLContent
+        })
         })
         .catch(error => {
             console.error('Si è verificato un errore:', error)
@@ -48,6 +66,8 @@ document.addEventListener('DOMContentLoaded', function () {
 //
 function nascondiSpinner () {
     const spinnerContainer = document.getElementById('spinner-container-album-top');
+    const spinnerContainer2 = document.getElementById('spinner-container-tracks')
     spinnerContainer.classList.add('d-none')
+    spinnerContainer2.classList.add('d-none')
 }
 //
