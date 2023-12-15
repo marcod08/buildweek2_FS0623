@@ -109,5 +109,10 @@ sliderAudio.addEventListener("change", function() {
     loadAudio(sessionStorage.getItem("song-id"));
   }
 
+ function loadAndPlay() {
+    loadAudio()
+    playAudio()
+
+  };
   
   
