@@ -42,7 +42,9 @@ document.addEventListener('DOMContentLoaded', function () {
          songs.forEach((song,index)=>{
             innerHTMLContent +=`
          <div class="col-1 d-none d-md-block my-3">${index+1}</div>
-         <div class="col-8 col-md-7"><p class="text-light text-hover text-decoration-none" onclick="loadAudio(${song.id})">${song.title}</p><p><a class="text-decoration-none text-secondary" href="artist.html?id=${data.artist.id}">${song.artist.name}</a></p></div>
+
+         <div class="col-8 col-md-7 my-3"><p class="text-light text-hover text-decoration-none" onclick="loadAudio(${song.id})">${song.title}</p><p><a class="text-decoration-none text-secondary" href="artist.html?id=${data.artist.id}">${song.artist.name}</a></p></div>
+
          <div class="d-none d-md-block col-2 text-truncate">
              ${song.rank}
          </div>
