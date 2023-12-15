@@ -44,6 +44,7 @@ function nascondiSpinner() {
     const spinnerContainer = document.getElementById('spinner-container');
     spinnerContainer.classList.add('d-none')
 }
+
 //right-column aside div//
 
 const centralColumn = document.querySelector('#central-column')

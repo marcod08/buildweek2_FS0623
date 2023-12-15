@@ -347,32 +347,33 @@
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
                             </div>
-                            <!-- Contenuto -->
-                            <div class="row row-cols-2 justify-content-between me-1 ms-1">
-                                <!--Freccette-->
-                                <div class="initial-div">
-                                    <a href="#" class="arrow-link" onclick="history.back()">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd"
-                                                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
-                                        </svg>
-                                    </a>
-                                    <a href="#" class="arrow-link" onclick="history.forward()">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd"
-                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-                                        </svg>
-                                    </a>
-                                </div>
-                                <!--Profilo dropdown-->
-                                <div class="d-flex justify-content-end">
-                                    <div class="dropdown">
-                                        <button class="btn btn-dark m-2 dropdown-toggle" type="button" id="profilo"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <img src="https://reteinformaticalavoro.it/images/company/6013edb782d88_300_300.png"
-                                                alt="Logo Epicode" class="mr-2" style="
+
+                                <!-- Contenuto -->
+                                <div class="row row-cols-2 justify-content-between me-1 ms-1">
+                                    <!--Freccette-->
+                                    <div class="initial-div">
+                                        <a href="#" class="arrow-link" onclick="history.back()">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                                            </svg>
+                                        </a>
+                                        <a href="#" class="arrow-link" onclick="history.forward()">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <!--Profilo dropdown-->
+                                    <div class="d-flex justify-content-end">
+                                        <div class="dropdown">
+                                            <button class="btn btn-dark m-2 dropdown-toggle" type="button" id="profilo"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <img src="./assets/imgs/main/epicoder.jpg"
+                                                    alt="Logo Epicode" class="mr-2" style="
                           width: 30px;
                           height: 30px;
                           margin-right: 10px;
@@ -380,8 +381,13 @@
                           object-fit: cover;
                           object-position: center;
                         " />
-                                            <p style="margin-top: 2px !important">Epicode Buildweek 2.0</p>
-                                        </button>
+
+                                                <p style="margin-top: 2px !important">Epicoder</p>
+                                            </button>
+                                        </div>
+                                        <div><img src="./assets/imgs/main/add_friends_icon.png" width="25" alt="add friend icon" id="showIconFriend" class="d-none" style="position: relative;
+                                            top: 0.8rem;"></div>
+
                                     </div>
                                 </div>
                             </div>
@@ -486,6 +492,7 @@
                                     <h5>Discografia</h5>
                                 </div>
                             </div>
+
                         </div>
                         <!-- Discografia -->
                         <div class="col-12">
@@ -495,6 +502,11 @@
                                 <div class="spinner-border text-success" role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
+                              
+                            <div class="text-end col-12 col-xxl-4">
+                                <img src="./assets/imgs/main/add_friends_icon.png" width="25" />
+                                <img id="xIconFriend" src="./assets/imgs/main/delete_icon.png" width="25" />
+                              
                             </div>
                             <div class="row discography"></div>
                         </div>
