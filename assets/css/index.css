@@ -50,6 +50,13 @@
     display: flex;
     flex-direction: reverse;
   }
+  @media (max-width:768px) {
+    #main-a{
+      background-image: url("../imgs/main/starwarsbackgroundimage.png");
+      background-position: 40% 40%;
+      
+    }
+  }
   
   #to-search{
     color: #a8a8a8;
