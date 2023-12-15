@@ -73,3 +73,24 @@ function nascondiSpinner () {
     spinnerContainer2.classList.add('d-none')
 }
 //
+
+//right-column aside div//
+
+const centralColumn = document.querySelector('#central-column')
+const xIconFriend = document.querySelector('#xIconFriend')
+const showIconFriend = document.querySelector('#showIconFriend')
+
+// Nasconde aside div
+xIconFriend.addEventListener('click', () => {
+    centralColumn.classList.remove('col-lg-8')
+    centralColumn.classList.add('col-lg-10')
+    showIconFriend.classList.remove('d-none')
+    
+})
+
+// Mostra aside div
+showIconFriend.addEventListener('click',() =>{
+    centralColumn.classList.remove('col-lg-10')
+    centralColumn.classList.add('col-lg-8')
+    showIconFriend.classList.add('d-none')
+})
