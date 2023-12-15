@@ -56,16 +56,19 @@ function getPopularSongs(artistId) {
                 albumImage.src = song.album.cover_small;
                 albumImage.alt = song.title;
                 albumImage.classList.add('flex-direction-column', 'me-3', 'img-fluid', 'col-1');
+             
 
                 // Titolo del brano
                 const songTitle = document.createElement('span');
                 songTitle.textContent = song.title;
-                songTitle.classList.add('me-3', 'col-6');
-
+                songTitle.classList.add('me-3', 'col-6', 'text-hover', 'text-decoration-none');
+                songTitle.addEventListener('click', function() {
+                    loadAudio(song.id);
+                  });
                 // Numero di ascolti
                 const listeners = document.createElement('span');
                 listeners.textContent = `${song.rank}`;
-                listeners.classList.add('text-opacity', 'opacity-50', 'ms-auto', 'col-2')
+                listeners.classList.add('text-opacity', 'opacity-50', 'ms-auto', 'col-2', 'd-none', 'd-md-block')
 
                 // Durata
                 const durationSong = document.createElement('span');

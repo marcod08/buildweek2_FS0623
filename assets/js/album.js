@@ -18,9 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
             return response.json()
         })
         .then(data => {
-            //Metto la prima traccia sul bottone
-            document.querySelector(".btn-spotify").setAttribute("onclick", `loadAudio(${data.tracks.data[0].id})`)
-            
             const container = document.querySelector('#artist-container')
             const container2 = document.querySelector('#container2')
             const songs = data.tracks.data
@@ -45,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
          songs.forEach((song,index)=>{
             innerHTMLContent +=`
          <div class="col-1 d-none d-md-block my-3">${index+1}</div>
-         <div class="col-8 col-md-7"><p>${song.title}</p><p class="text-secondary">${song.artist.name}</p></div>
+         <div class="col-8 col-md-7"><p class="text-light text-hover text-decoration-none" onclick="loadAudio(${song.id})">${song.title}</p><p><a class="text-decoration-none text-secondary" href="artist.html?id=${data.artist.id}">${song.artist.name}</a></p></div>
          <div class="d-none d-md-block col-2 text-truncate">
              ${song.rank}
          </div>
