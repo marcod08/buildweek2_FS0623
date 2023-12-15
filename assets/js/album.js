@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', function () {
             return response.json()
         })
         .then(data => {
+            //Metto la prima traccia sul bottone
+            document.querySelector(".btn-spotify").setAttribute("onclick", `loadAudio(${data.tracks.data[0].id})`)
+            
             const container = document.querySelector('#artist-container')
             const container2 = document.querySelector('#container2')
             const songs = data.tracks.data
